@@ -1,1 +1,9 @@
 This is simply a template project that I will use to set up future Node/Express apps
+
+Initialization:
+
+1) Start a new repository and clone it
+2) cd new-repo
+3) git remote add express-template git@github.com:wjohnald/Express-Template.git
+4) git pull express-template master
+
