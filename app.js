@@ -21,7 +21,9 @@ app.configure(function(){
   app.use(app.router);
   app.use(lessMiddleware({
         src: __dirname + '/public',
-        compress: true
+        debug: false,
+        compress: true,
+        force: true
     }));
   app.use(express.static(__dirname + '/public'));
 });
@@ -30,6 +32,7 @@ app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   app.use(lessMiddleware({
         src: __dirname + '/public',
+        debug: true,
         compress: true,
         force: true
     }));

@@ -1,13 +1,32 @@
+// Less mixins for common css3 styles
 @import '/stylesheets/elements.less';
-@import '/stylesheets/normalize.css';
+@import '/stylesheets/normalize.less';
+
+// Required Variables (used in normalize.less)
+@linkColor:#009566;
 
 body
 {
-  padding: 50px;
   font: 14px Helvetica, Arial, sans-serif;
   color: #333;
+  margin: 0 20px;
+  a
+  {
+    color: @linkColor;
+    .transition;
+    &:hover
+    {
+      color: darken(@linkColor, 20%);
+    }
+  }
 }
 
-a {
-  color: #00B7FF;
+.main,
+header,
+footer
+{
+  background-color: #f2f2f2;
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width:1140px;
 }
