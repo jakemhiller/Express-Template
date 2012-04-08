@@ -1,9 +1,18 @@
-This is simply a template project that I will use to set up future Node/Express apps
 
-Initialization:
+
+This is my version of wjohnald's Express-Template project
+
+View Engine: Underscore Templates
+CSS Compiler: LESS
+
+Includes basic layout and stylesheets, most of which are modified from the HTML5 Boilerplate.
+
+Getting started:
 
 1) Start a new repository and clone it
 2) cd new-repo
-3) git remote add express-template git@github.com:wjohnald/Express-Template.git
+3) git remote add express-template git://github.com/jakemhiller/Express-Template.git
 4) git pull express-template master
+5) npm install
+5) node app.js
 
