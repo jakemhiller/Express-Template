@@ -5,6 +5,7 @@
 
 var express = require('express')
   , _ = require('underscore')
+  , lessMiddleware = require('less-middleware')
   ;
 
 var app = module.exports = express.createServer();
@@ -18,11 +19,20 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
+  app.use(lessMiddleware({
+        src: __dirname + '/public',
+        compress: true
+    }));
   app.use(express.static(__dirname + '/public'));
 });
 
 app.configure('development', function(){
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+  app.use(lessMiddleware({
+        src: __dirname + '/public',
+        compress: true,
+        force: true
+    }));
 });
 
 app.configure('production', function(){
